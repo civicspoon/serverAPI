@@ -2,6 +2,12 @@
 const express = require('express');
 const api = express();
 
+// MiidelWare API-KET HERE
+
+
+
+// /////////////////////////
+
 api.get('/api/user', async (req, res) => {
     try {
         console.log("api/user");
@@ -11,6 +17,8 @@ api.get('/api/user', async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 });
+
+
 
 api.listen(5000, () => {
     console.log('Server is running on port 5000');
