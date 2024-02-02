@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  # Node.js for REST API
+  nodejs_app:
+    image: node:latest
+    container_name: nodejs_rest_api
+    working_dir: /app
+    volumes:
+      - ./app:/app
+    ports:
+      - "9000:9000"
+    command: npm start
+
+  # MariaDB
+  # mariadb:
+  #   image: mariadb:latest
+  #   container_name: mariadb_container
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: aot#avsec
+  #     MYSQL_DATABASE: UserDB
+  #     MYSQL_USER: UserDBRoot
+  #     MYSQL_PASSWORD: tock2tock
+  #   ports:
+  #     - "3306:3306"
+
+  # # phpMyAdmin
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin:latest
+  #   container_name: phpmyadmin_container
+  #   restart: always
+  #   environment:
+  #     PMA_HOST: mariadb
+  #     PMA_PORT: 3306
+  #     MYSQL_ROOT_PASSWORD: aot#avsec
+  #   ports:
+  #     - "8000:80"
